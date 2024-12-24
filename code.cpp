@@ -281,90 +281,90 @@
 // }
 
 
-//problem 05. Remove Duplicate
+// //problem 05. Remove Duplicate
 
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
 
-using namespace std;
+// using namespace std;
 
 
 
-struct Node {
-    int value;
-    Node* next;
+// struct Node {
+//     int value;
+//     Node* next;
     
-    Node(int val) : value(val), next(nullptr) {}
-};
+//     Node(int val) : value(val), next(nullptr) {}
+// };
 
-class LinkedList {
-public:
-    Node* head;
+// class LinkedList {
+// public:
+//     Node* head;
     
-    LinkedList() : head(nullptr) {}
+//     LinkedList() : head(nullptr) {}
     
-    void insert(int value) {
-        Node* newNode = new Node(value);
-        if (!head) {
-            head = newNode;
-        } else {
-            Node* temp = head;
-            while (temp->next) {
-                temp = temp->next;
-            }
-            temp->next = newNode;
-        }
-    }
+//     void insert(int value) {
+//         Node* newNode = new Node(value);
+//         if (!head) {
+//             head = newNode;
+//         } else {
+//             Node* temp = head;
+//             while (temp->next) {
+//                 temp = temp->next;
+//             }
+//             temp->next = newNode;
+//         }
+//     }
 
-    void removeDuplicates() {
-        if (!head) return;
+//     void removeDuplicates() {
+//         if (!head) return;
         
-        unordered_set<int> seen;
-        Node* current = head;
-        Node* prev = nullptr;
+//         unordered_set<int> seen;
+//         Node* current = head;
+//         Node* prev = nullptr;
         
-        while (current) {
-            if (seen.find(current->value) != seen.end()) {
-                prev->next = current->next;
-                delete current;
-                current = prev->next;
-            } else {
-                seen.insert(current->value);
-                prev = current;
-                current = current->next;
-            }
-        }
-    }
+//         while (current) {
+//             if (seen.find(current->value) != seen.end()) {
+//                 prev->next = current->next;
+//                 delete current;
+//                 current = prev->next;
+//             } else {
+//                 seen.insert(current->value);
+//                 prev = current;
+//                 current = current->next;
+//             }
+//         }
+//     }
     
-    void printList() {
-        Node* temp = head;
-        if (!temp) {
-            cout << endl;
-            return;
-        }
+//     void printList() {
+//         Node* temp = head;
+//         if (!temp) {
+//             cout << endl;
+//             return;
+//         }
         
-        while (temp) {
-            cout << temp->value;
-            if (temp->next) cout << " ";
-            temp = temp->next;
-        }
-        cout << endl;
-    }
-};
+//         while (temp) {
+//             cout << temp->value;
+//             if (temp->next) cout << " ";
+//             temp = temp->next;
+//         }
+//         cout << endl;
+//     }
+// };
 
-int main() {
-    int value;
-    LinkedList list;
+// int main() {
+//     int value;
+//     LinkedList list;
     
-    while (cin >> value) {
-        if (value == -1) break;
-        list.insert(value);
-    }
+//     while (cin >> value) {
+//         if (value == -1) break;
+//         list.insert(value);
+//     }
     
-    list.removeDuplicates();
+//     list.removeDuplicates();
     
-    list.printList();
+//     list.printList();
     
-    return 0;
-}
+//     return 0;
+// }
 
 
